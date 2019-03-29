@@ -1,0 +1,13 @@
+[package]
+name = "turn-me"
+version = "0.1.0"
+authors = ["ZOTTCE <zottce@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+futures = "0.1.25"
+tokio-current-thread = "0.1.6"
+tokio-executor = "0.1.7"
+tokio-timer = "0.2.10"
+tokio-reactor = "0.1.9"
+tokio-threadpool = "0.1.13"
