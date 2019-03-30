@@ -1,3 +1,5 @@
+#![feature(futures_api)]
+
 use tokio_current_thread::CurrentThread;
 use tokio_reactor::{self, Reactor};
 use tokio_threadpool::{blocking, ThreadPool};
@@ -11,11 +13,14 @@ use futures::future::poll_fn;
 use futures::sync::oneshot;
 use futures::Future;
 
+pub mod async_await;
+
 thread_local!(static RT: RefCell<Runtime> = RefCell::new(Runtime::new()));
 thread_local!(static POOL: RefCell<ThreadPool> = RefCell::new(ThreadPool::new()));
 
 // re-exports
 pub use tokio_current_thread::{spawn, RunError};
+pub use crate::async_await::*;
 
 /// Minimal signle-threaded tokio runtime that runs by calling [`turn`] or [`turn_with_timeout`].
 ///

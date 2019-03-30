@@ -11,3 +11,4 @@ tokio-executor = "0.1.7"
 tokio-timer = "0.2.10"
 tokio-reactor = "0.1.9"
 tokio-threadpool = "0.1.13"
+tokio-async-await = { version = "0.1.6", features = ["async-await-preview"] }
